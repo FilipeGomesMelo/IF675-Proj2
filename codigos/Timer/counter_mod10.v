@@ -1,3 +1,5 @@
+// Nivel 3
+// contador decrescente Mod10
 module counter_mod10 (
     input wire [3:0] data,
     input wire loadn, // sicrono, active low

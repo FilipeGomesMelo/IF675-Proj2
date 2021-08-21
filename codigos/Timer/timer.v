@@ -1,3 +1,5 @@
+// Nivel 2
+// Junção dos contadores para fazer o minutes/seconds timer
 module timer (
     input wire [3:0] data,
     input wire loadn, // sicrono, active low
