@@ -10,7 +10,14 @@ module counter_tb ();
     wire [3:0] digit;
     wire tc, zero;
 
-    counter_mod10 uut (data, loadn, clearn, clock, enable, digit, tc, zero);
+    counter_mod10 uut (data,
+                       loadn,
+                       clearn,
+                       clock,
+                       enable,
+                       digit,
+                       tc,
+                       zero);
 
     initial begin
 
