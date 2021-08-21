@@ -1,41 +1,41 @@
 `timescale 1us/1ps
 module timer_tb ();
 
-    reg [3:0] data_in;
-    reg loadn, clear, clock, enable;
+    reg [3:0] data_TB;
+    reg loadn_TB, clearn_TB, clock_TB, en_TB;
 
     integer i;
 
-    timer DUT(.data(data_in), .loadn(loadn), .clock(clock),
-    .clearn(clear), .en(enable));
+    timer DUT(.data(data_TB), .loadn(loadn_TB), .clock(clock_TB),
+    .clearn(clearn_TB), .en(en_TB));
 
     initial begin
         $dumpfile("test/timer_tb.vcd");
         $dumpvars(0,timer_tb);
         
-        for(i = 0; i < 3005; i = i+1) begin
-            #5000 clock <= ~clock;
+        for(i = 0; i < 2500; i = i+1) begin
+            #5000 clock_TB <= !clock_TB;
         end
     end
 
 
     initial begin
-        loadn = 0;
-        clear = 0;
-        clock = 1;
-        enable = 0;
-        data_in = 4'd8;
+        loadn_TB = 0;
+        clearn_TB = 0;
+        clock_TB = 1;
+        en_TB = 0;
+        data_TB = 4'd8;
         #7500;
-        data_in = 4'd5;
+        data_TB = 4'd5;
         #10000;
-        data_in = 4'd7;
+        data_TB = 4'd7;
         #10000;
-        loadn = 1;
-        enable = 1;
+        loadn_TB = 1;
+        en_TB = 1;
         #5700000;
-        clear = 1;
+        clearn_TB = 1;
         #8000;
-        clear = 0;
+        clearn_TB = 0;
     end
     
 endmodule

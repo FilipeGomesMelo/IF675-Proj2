@@ -1,17 +1,17 @@
 // Nivel 3
 // contador decrescente mod6
 module counter_mod6 (
-    input wire [3:0] data,
+    input wire [3:0] data, // entrada de dados doc ontador usada no loadn
     input wire loadn, // sicrono, active low
     input wire clearn, // assincrono, active high
     input wire clock,
     input wire en, // active high
-    output reg [3:0] digit,
+    output reg [3:0] digit, // saida do contador
     output wire tc, // vira high quando o counter chega a 0 para ativar o prox contador da cadeia
     output wire zero); // indica se o contador chegou a 0
 
-    assign tc = ((digit == 0) & en) ? 1 : 0;
-    assign zero = (digit == 0) ? 1 : 0;
+    assign tc = ((digit == 0) && en);
+    assign zero = (digit == 0);
 
     // limpa o digit de forma assincrona quando clearn está ativo (acive low)
     always @ (negedge clearn) begin

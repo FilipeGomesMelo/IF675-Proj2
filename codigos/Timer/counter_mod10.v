@@ -1,5 +1,5 @@
 // Nivel 3
-// contador decrescente Mod10
+// contador decrescente mod10
 module counter_mod10 (
     input wire [3:0] data,
     input wire loadn, // sicrono, active low
@@ -10,8 +10,8 @@ module counter_mod10 (
     output wire tc, // vira high quando o counter chega a 0 para ativar o prox contador da cadeia
     output wire zero); // indica se o contador chegou a 0
 
-    assign tc = ((digit == 0) & en) ? 1 : 0;
-    assign zero = (digit == 0) ? 1 : 0;
+    assign tc = ((digit == 0) && en);
+    assign zero = (digit == 0);
 
     // limpa o digit de forma assincrona quando clearn está ativo (acive low)
     always @ (negedge clearn) begin
