@@ -10,6 +10,7 @@ module timer (
     wire en_sec_tens, en_mins, void;
     wire zero_sec_ones, zero_sec_tens, zero_sec_mins;
 
+    // primeiro contador, casa das unicades dos segundos
     counter_mod10 seconds_ones(.loadn(loadn),
                           .clearn(clearn),
                           .clock(clock),
@@ -19,6 +20,7 @@ module timer (
                           .zero(zero_sec_ones),
                           .digit(sec_ones));
 
+    // segundo contador, casa das dezenas dos segundos
     counter_mod6 seconds_tens(.loadn(loadn),
                           .clearn(clearn),
                           .clock(clock),
@@ -28,6 +30,7 @@ module timer (
                           .zero(zero_sec_tens),
                           .digit(sec_tens));
 
+    // terceiro contador, casa das unidades dos minutos
     counter_mod10 minutes(.loadn(loadn),
                           .clearn(clearn),
                           .clock(clock),
@@ -37,8 +40,6 @@ module timer (
                           .zero(zero_sec_mins),
                           .digit(mins));
     
-    and(zero, zero_sec_ones, zero_sec_tens, zero_sec_mins);
-
-    assign zero = zero_sec_ones & zero_sec_tens && zero_sec_mins;
+    assign zero = zero_sec_ones && zero_sec_tens && zero_sec_mins;
 
 endmodule
