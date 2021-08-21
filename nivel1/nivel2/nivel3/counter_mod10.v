@@ -31,16 +31,8 @@ module counter_mod10 (
                 4'b0100: digit <= 4'b0011; // 4 -> 3
                 4'b0011: digit <= 4'b0010; // 3 -> 2
                 4'b0010: digit <= 4'b0001; // 2 -> 1
-                4'b0001: begin // 1 -> 0
-                    digit <= 4'b0000;
-                    // tc <= 1'b1;
-                    // zero <= 1'b1;
-                end
-                default: begin // 0 -> 9
-                    digit <= 4'b1001;
-                    // tc <= 1'b0;
-                    // zero <= 1'b0;
-                end
+                4'b0001: digit <= 4'b0000; // 1 -> 0
+                default: digit <= 4'b1001; // 0 -> 9
             endcase
         end  
     end

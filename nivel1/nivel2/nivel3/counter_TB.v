@@ -26,7 +26,7 @@ module counter_tb ();
         #5 assign loadn = 0; 
 
         #6 assign loadn = 1; 
-        #5 assign enable = 1; 
+        #4 assign enable = 1; 
 
         // CASO ENABLE E LOADN ESTEJAM ATIVOS AO MESMO TEMPO (deve dar erro)
         // assign loadn = 1; 
@@ -40,7 +40,6 @@ module counter_tb ();
 
         // TESTE DO CLEARN
         // assign loadn = 1; 
-        // assign enable = 0; 
         // assign clearn = 1;
         // assign data = 4'b0110;
 
@@ -50,7 +49,6 @@ module counter_tb ();
         // #5 assign enable = 1; 
 
         // #50 assign clearn = 0;
-        // assign enable = 0;
 
         #400;
         $finish;
