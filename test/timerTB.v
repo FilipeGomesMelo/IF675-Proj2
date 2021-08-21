@@ -10,7 +10,7 @@ module timer_tb ();
     .clearn(clear), .en(enable));
 
     initial begin
-        $dumpfile("timer_tb.vcd");
+        $dumpfile("test/timer_tb.vcd");
         $dumpvars(0,timer_tb);
         
         for(i = 0; i < 3005; i = i+1) begin
@@ -23,11 +23,16 @@ module timer_tb ();
         loadn = 0;
         clear = 0;
         clock = 1;
-        enable = 1;
+        enable = 0;
+        data_in = 4'd8;
+        #7500;
         data_in = 4'd5;
-        #16000;
+        #10000;
+        data_in = 4'd7;
+        #10000;
         loadn = 1;
-        #100000;
+        enable = 1;
+        #5700000;
         clear = 1;
         #8000;
         clear = 0;
