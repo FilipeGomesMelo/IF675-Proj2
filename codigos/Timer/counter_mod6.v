@@ -24,11 +24,20 @@ module counter_mod6 (
         // so conta quando en está ativo (active high)
         if (en) begin
             case (digit)
+                // para evitar problemas quando a for algo entre x:61~x:99
+                // teoricamente entradas desse formato tem que ser convertidas para que os sec_tens fiquem
+                // até 6 (ex: 0:90->1:30), mas isso não está sendo feito ainda
+                4'b1001: digit <= 4'b1000; // 9 -> 8
+                4'b1000: digit <= 4'b0111; // 8 -> 7
+                4'b0111: digit <= 4'b0110; // 7 -> 6
+                4'b0110: digit <= 4'b0101; // 6 -> 5
+                // Ciclo normal
                 4'b0101: digit <= 4'b0100; // 5 -> 4
                 4'b0100: digit <= 4'b0011; // 4 -> 3
                 4'b0011: digit <= 4'b0010; // 3 -> 2
                 4'b0010: digit <= 4'b0001; // 2 -> 1
                 4'b0001: digit <= 4'b0000; // 1 -> 0
+                // volta para 5
                 4'b0000: digit <= 4'b0101; // 0 -> 5
                 default: digit <= digit;
             endcase

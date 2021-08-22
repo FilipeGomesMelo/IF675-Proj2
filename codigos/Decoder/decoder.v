@@ -4,7 +4,7 @@
 //   4     2
 //      3
 module decoder (input [3:0] sec_ones, sec_tens, mins,
-               output [6:0] ones_saida, tens_saida, mins_saida);
+                output [6:0] ones_saida, tens_saida, mins_saida);
     // digito dos minutos, é vazio sempre que é 0
     assign mins_saida = (mins == 4'b0000) ? 7'b000_0000 : // 0 a esquerda
                         (mins == 4'b0001) ? 7'b011_0000 : // 1

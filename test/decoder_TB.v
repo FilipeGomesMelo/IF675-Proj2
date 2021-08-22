@@ -5,8 +5,8 @@ module decoder_TB ();
     reg [3:0] sec_ones_TB, sec_tens_TB, mins_TB;
     wire [6:0] ones_saida_TB, tens_saida_TB, mins_saida_TB;
 
-    decoder DUT(.sec_ones(sec_ones_TB), .sec_tens(sec_tens_TB), .mins(mins_TB),
-    .ones_saida(ones_saida_TB), .tens_saida(tens_saida_TB), .mins_saida(mins_saida_TB));
+    decoder DUT(.sec_ones(sec_ones_TB), .sec_tens(sec_tens_TB), .mins(mins_TB), // saidas
+    .ones_saida(ones_saida_TB), .tens_saida(tens_saida_TB), .mins_saida(mins_saida_TB)); // entradas
 
     initial begin
         $dumpfile("test/decoder_TB.vcd");
