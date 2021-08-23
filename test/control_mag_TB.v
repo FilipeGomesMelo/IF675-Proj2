@@ -18,7 +18,8 @@ module control_mag_TB ();
         $dumpfile("test/control_mag_TB.vcd");
         $dumpvars(0,control_mag_TB);
 
-        #10;
+        stopn_TB = 1'b1; clearn_TB = 1'b1; timer_done_TB = 1'b0;
+
         // liga
         #10 startn_TB = 1'b0; door_closed_TB = 1'b0;
         #10 startn_TB = 1'b0; door_closed_TB = 1'b1;
