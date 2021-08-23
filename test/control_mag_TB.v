@@ -1,12 +1,12 @@
 `timescale 1us/1ps
 
 // Modulo para teste do arquivo timer.v
-module control_TB ();
+module control_mag_TB ();
 
     reg startn_TB, stopn_TB, clearn_TB, door_closed_TB, timer_done_TB;
     wire Q_TB;
 
-    control DUT(.Q(Q_TB), // saidas
+    control_mag DUT(.Q(Q_TB), // saidas
                 // entradas
                 .startn(startn_TB),
                 .stopn(stopn_TB),
@@ -15,8 +15,8 @@ module control_TB ();
                 .timer_done(timer_done_TB));
 
     initial begin
-        $dumpfile("test/control_TB.vcd");
-        $dumpvars(0,control_TB);
+        $dumpfile("test/control_mag_TB.vcd");
+        $dumpvars(0,control_mag_TB);
 
         #10;
         // liga

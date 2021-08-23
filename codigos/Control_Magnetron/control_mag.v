@@ -1,5 +1,5 @@
 // controlador do magnetron
-module control (
+module control_mag (
     input wire startn, stopn, clearn, door_closed, timer_done,
     output wire Q);
 
