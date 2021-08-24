@@ -9,17 +9,17 @@ module micro_ondas_TB ();
     wire mag_on_TB;
 
     micro_ondas DUT(// entradas
-                .keypad(keypad_TB),
-                .clock(clock_TB),
-                .startn(startn_TB),
-                .clearn(clearn_TB),
-                .door_closed(door_closed_TB),
-                .stopn(stopn_TB),
-                // saidas
-                .sec_ones_segs(sec_ones_segs_TB),
-                .sec_tens_segs(sec_tens_segs_TB),
-                .mins_segs(mins_segs_TB),
-                .mag_on(mag_on_TB));
+                    .keypad(keypad_TB),
+                    .clock(clock_TB),
+                    .startn(startn_TB),
+                    .clearn(clearn_TB),
+                    .door_closed(door_closed_TB),
+                    .stopn(stopn_TB),
+                    // saidas
+                    .sec_ones_segs(sec_ones_segs_TB),
+                    .sec_tens_segs(sec_tens_segs_TB),
+                    .mins_segs(mins_segs_TB),
+                    .mag_on(mag_on_TB));
 
     integer i;
 
