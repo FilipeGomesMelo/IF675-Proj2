@@ -1,8 +1,12 @@
 module div100 (
-    input wire clock,
+    input wire clock, clearn,
     output reg clock_div100);
 
     integer aux = 0;
+
+    always @(posedge clearn) begin
+        aux = 0;
+    end
 
     always @(posedge clock) begin
         if (aux == 100) begin

@@ -10,9 +10,13 @@ module counter_mod6 (
     output wire tc, // vira high quando o counter chega a 0 para ativar o prox contador da cadeia
     output wire zero); // indica se o contador chegou a 0
 
-    assign tc = ((digit == 0) && en);
-    assign zero = (digit == 0);
+    assign tc = ((digit == 4'b0000) && en);
+    assign zero = (digit === 4'b0000 || digit === 4'bXXXX) ? 1'b1 : 1'b0;
 
+    initial begin
+        digit = 4'b0000;    
+    end
+    
     // limpa o digit de forma assincrona quando clearn está ativo (acive low)
     always @ (negedge clearn) begin
         digit <= 4'b0000;
@@ -39,7 +43,7 @@ module counter_mod6 (
                 4'b0001: digit <= 4'b0000; // 1 -> 0
                 // volta para 5
                 4'b0000: digit <= 4'b0101; // 0 -> 5
-                default: digit <= digit;
+                default: digit <= 4'b0000;
             endcase
         end
         else if (!loadn) digit <= data;
