@@ -4,6 +4,7 @@ module encoder (
     output wire [3:0] BCD,
     output reg data_valid);
 
+    // mapeamento da entrada para BCD
     assign BCD = (keypad == 10'b0000_000_001 && !en) ? 4'b0000 :
                  (keypad == 10'b0000_000_010 && !en) ? 4'b0001 :
                  (keypad == 10'b0000_000_100 && !en) ? 4'b0010 :
@@ -16,6 +17,7 @@ module encoder (
                  (keypad == 10'b1000_000_000 && !en) ? 4'b1001 :
                  4'bXXXX;
 
+    // controle do data_valid
     always @(keypad, en) begin
         if ((keypad == 10'b0000_000_000) || en) data_valid = 1'b1; 
         else data_valid = 1'b0;

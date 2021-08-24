@@ -9,22 +9,23 @@ module counter_mod8 (
 
     reg active_count;
 
+    // para a contagem quando temos um posedge
     always @(posedge clearn) begin
         active_count = 1'b0;
     end
 
-    // limpa o digit de forma assincrona quando clearn está ativo (acive low)
+    // começa a contagem com negedge
     always @ (negedge clearn) begin
         count <= 3'b000;
         F <= 1'b0;
         active_count = 1'b1;
     end
 
-    // digit recebe data de forma sincrona quando loadn está ativo (active low)
     // loop principal para a contagem
     always @(posedge clock) begin
+        // para a contagem caso o botão seja solto, evitando problemas de a pessoa soltar o botão antes da ativação
+        // que passa o valor para o timer
         if (active_count) begin
-            // so conta quando en está ativo (active high)
             case (count)
                 3'b000: count <= 3'b001; // 0 -> 1
                 3'b001: count <= 3'b010; // 1 -> 2
