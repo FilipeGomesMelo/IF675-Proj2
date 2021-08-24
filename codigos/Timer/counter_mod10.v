@@ -3,7 +3,7 @@
 module counter_mod10 (
     input wire [3:0] data,
     input wire loadn, // sicrono, active low
-    input wire clearn, // assincrono, active high
+    input wire clearn, // assincrono, active low
     input wire clock,
     input wire en, // active high
     output reg [3:0] digit,

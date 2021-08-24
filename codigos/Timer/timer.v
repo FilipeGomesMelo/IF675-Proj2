@@ -3,7 +3,7 @@
 module timer (
     input wire [3:0] data, // entrada de dados
     input wire loadn, // sicrono, active low
-    input wire clearn, // assincrono, active high
+    input wire clearn, // assincrono, active low
     input wire clock,
     input wire en, // enable, active high
     output wire [3:0] sec_ones, sec_tens, mins, // saida da unidade dos segundos, dezena dos segundos, e minutos
