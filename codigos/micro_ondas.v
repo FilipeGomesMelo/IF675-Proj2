@@ -23,7 +23,7 @@ module micro_ondas (
 
     // encoder
     control_input C (.keypad(keypad), .clock(clock), .en(mag_on), // entradas
-                          .BCD(BCD), .loadn(loadn), .pgt_1Hz(pgt_1Hz)); // saidas
+                     .BCD(BCD), .loadn(loadn), .pgt_1Hz(pgt_1Hz)); // saidas
 
     // contador mod8
     timer T (// entradas

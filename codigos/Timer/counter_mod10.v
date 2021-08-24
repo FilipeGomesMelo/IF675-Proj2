@@ -22,7 +22,6 @@ module counter_mod10 (
     // loop principal para a contagem
     always @(posedge clock) begin
         // so conta quando en está ativo (active high)
-        
         if (en) begin
             case (digit)
                 4'b1001: digit <= 4'b1000; // 9 -> 8

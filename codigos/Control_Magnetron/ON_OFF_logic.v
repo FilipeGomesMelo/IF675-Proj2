@@ -6,13 +6,17 @@ module ON_OFF_logic (
     always @ * begin
         // caso a porta estiver aberta ou o stop ou o clearn ou o timer estiverem ativados
         if (!door_closed || !stopn || !clearn || timer_done) begin
-            set = 0;
-            reset = 1;
+            set <= 1'b0;
+            reset <= 1'b1;
         end
         // caso o start estiver ativo (active low) e a porta estiver fechada, ligamos o set e desligamos o reset
         else if (!startn && door_closed) begin
-            set = 1;
-            reset = 0;
+            set <= 1'b1;
+            reset <= 1'b0;
+        end
+        else begin
+            set <= 1'b0;
+            reset <= 1'b0;
         end
     end
 
