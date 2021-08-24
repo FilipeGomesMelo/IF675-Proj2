@@ -35,32 +35,47 @@ module micro_ondas_TB ();
     initial begin
         clock_TB = 1'b1;
         startn_TB = 1'b1; stopn_TB = 1'b1; clearn_TB = 1'b1; door_closed_TB = 1'b1;
+        // teste de entrada dos valores
         #5000 keypad_TB = 10'b0000_000_010;
-        #100000 keypad_TB = 10'b0000_000_000;
-        #5000 keypad_TB = 10'b0000_000_001;
         #100000 keypad_TB = 10'b0000_000_000;
         #5000 keypad_TB = 10'b0000_001_000;
         #100000 keypad_TB = 10'b0000_000_000;
+        #5000 keypad_TB = 10'b0000_100_000;
+        #100000 keypad_TB = 10'b0000_000_000;
+        // #25000 startn_TB = 1'b0;
+        // #25000 startn_TB = 1'b1;
+        
+        // teste de clearn
         // #25000 clearn_TB = 1'b0;
         // #25000 clearn_TB = 1'b1;
+        
+        // inicializa o microondas
         #25000 startn_TB = 1'b0;
         #25000 startn_TB = 1'b1;
+        
+        // tentando fazer inputs enquanto o microondas está ativo
         //#5000 keypad_TB = 10'b0000_000_100;
         //#100000 keypad_TB = 10'b0000_000_000;
         //#5000 keypad_TB = 10'b0000_100_000;
         //#100000 keypad_TB = 10'b0000_000_000;
         //#5000 keypad_TB = 10'b0000_000_010;
         //#100000 keypad_TB = 10'b0000_000_000;
-        // #25000 startn_TB = 1'b0;
-        // #25000 startn_TB = 1'b1;
+        
+        // parando o microondas enquanto está ativo usando o stop
         // #500000 stopn_TB = 1'b0;
         // #500000 stopn_TB = 1'b1;
+        
+        // parando o microondas enquanto está ativo abrindo a porta
         // #600000 door_closed_TB = 1'b0;
         // #600000 door_closed_TB = 1'b1;
         // #600000;
+
+        // parando o microondas com o clearn de clearn
+        // #25000 clearn_TB = 1'b0;
+        // #25000 clearn_TB = 1'b1;
+
+        // reinicializando o microondas depois de ser interrompido
         // #25000 startn_TB = 1'b0;
         // #25000 startn_TB = 1'b1;
-        // #5000 keypad_TB = 10'b0000_000_010;
-        // #100000 keypad_TB = 10'b0000_000_000;
     end 
 endmodule
