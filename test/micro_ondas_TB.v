@@ -14,6 +14,7 @@ module micro_ondas_TB ();
                 .startn(startn_TB),
                 .clearn(clearn_TB),
                 .door_closed(door_closed_TB),
+                .stopn(stopn_TB),
                 // saidas
                 .sec_ones_segs(sec_ones_segs_TB),
                 .sec_tens_segs(sec_tens_segs_TB),
@@ -38,7 +39,21 @@ module micro_ondas_TB ();
         #100000 keypad_TB = 10'b0000_000_000;
         #5000 keypad_TB = 10'b0000_000_001;
         #100000 keypad_TB = 10'b0000_000_000;
+        #5000 keypad_TB = 10'b0000_001_000;
+        #100000 keypad_TB = 10'b0000_000_000;
+        //#25000 clearn_TB = 1'b0;
+        //#25000 clearn_TB = 1'b1;
         #25000 startn_TB = 1'b0;
         #25000 startn_TB = 1'b1;
+        //#5000 keypad_TB = 10'b0000_000_100;
+        //#100000 keypad_TB = 10'b0000_000_000;
+        //#5000 keypad_TB = 10'b0000_100_000;
+        //#100000 keypad_TB = 10'b0000_000_000;
+        //#5000 keypad_TB = 10'b0000_000_010;
+        //#100000 keypad_TB = 10'b0000_000_000;
+        //#25000 startn_TB = 1'b0;
+        //#25000 startn_TB = 1'b1;
+        //#500000 stopn_TB = 1'b0;
+        //#600000 door_closed_TB = 1'b0;
     end 
 endmodule
