@@ -5,7 +5,7 @@ module micro_ondas_TB ();
 
     reg [9:0] keypad_TB;
     reg clock_TB, startn_TB, stopn_TB, clearn_TB, door_closed_TB;
-    wire [6:0] sec_ones_segs_TB, sec_tens_segs_TB, mins_segs_TB;
+    wire [6:0] sec_ones_segs_TB, sec_tens_segs_TB, mins_segs_TB, mins_tens_segs_TB;
     wire mag_on_TB;
 
     micro_ondas DUT(// entradas
@@ -19,7 +19,8 @@ module micro_ondas_TB ();
                     .sec_ones_segs(sec_ones_segs_TB),
                     .sec_tens_segs(sec_tens_segs_TB),
                     .mins_segs(mins_segs_TB),
-                    .mag_on(mag_on_TB));
+                    .mag_on(mag_on_TB),
+                    .mins_tens_segs(mins_tens_segs_TB));
 
     integer i;
 

@@ -3,8 +3,10 @@
 //      6
 //   4     2
 //      3
+
+// usamos 7 seguimentos ativos em alto
 module decoder (input [3:0] sec_ones, sec_tens, mins,
-                output [6:0] ones_saida, tens_saida, mins_saida);
+                output [6:0] ones_saida, tens_saida, mins_saida, mins_tens_saida);
     // digito dos minutos, é vazio sempre que é 0
     assign mins_saida = (mins === 4'b0000) ? 7'b000_0000 : // 0 a esquerda
                         (mins === 4'b0001) ? 7'b011_0000 : // 1
@@ -45,4 +47,6 @@ module decoder (input [3:0] sec_ones, sec_tens, mins,
                         (sec_ones === 4'b1000) ? 7'b111_1111 : // 8
                         (sec_ones === 4'b1001) ? 7'b111_0011 : // 9
                         7'b000_0000;
+
+    assign mins_tens_saida = 7'b000_0000;
 endmodule

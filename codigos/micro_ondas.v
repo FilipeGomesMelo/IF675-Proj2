@@ -4,7 +4,7 @@ module micro_ondas (
     input wire [9:0] keypad,
     input wire clock, startn, stopn, clearn, door_closed,
     // saidas
-    output wire [6:0] sec_ones_segs, sec_tens_segs, mins_segs,
+    output wire [6:0] sec_ones_segs, sec_tens_segs, mins_segs, mins_tens_segs,
     output wire mag_on);
 
     wire zero, loadn, pgt_1Hz;
@@ -45,7 +45,8 @@ module micro_ondas (
                // saidas
                .ones_saida(sec_ones_segs),
                .tens_saida(sec_tens_segs),
-               .mins_saida(mins_segs));
+               .mins_saida(mins_segs),
+               .mins_tens_saida(mins_tens_segs));
 
 endmodule
  
