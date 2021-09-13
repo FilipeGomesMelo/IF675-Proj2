@@ -1,5 +1,5 @@
 # IF675-Proj2
-Implementação de forno micro-ondas em verilog
+Um controlador de forno micro-ondas implementado usando a HDL verilog durante a cadeira de sistemas digitais seguindo as especificações do livro Digital Systems Principles and Applications, 12º edição.
 
 ## Alunos: Bruna Alves, Filipe Gomes, José Rodrigo Moura e Humberto Lima
 
