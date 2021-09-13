@@ -1,7 +1,7 @@
 # IF675-Proj2
 Implementação de forno micro-ondas em verilog
 
-# Alunos: Bruna Alves, Filipe Gomes, José Rodrigo Moura e Humberto Lima
+## Alunos: Bruna Alves, Filipe Gomes, José Rodrigo Moura e Humberto Lima
 
 ## **Gerar arquivos windows**:
 - *Controlador de Input*:
